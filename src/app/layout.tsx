@@ -14,10 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Weather App",
-    default: "Weather App", // a default is required when creating a template
-  },
+  title: "Weather App",
 };
 
 export default function RootLayout({

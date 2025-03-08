@@ -38,9 +38,7 @@ export async function getBackgroundImage(city: string) {
     { headers: { Authorization: pexelsKey } }
   );
 
-  if (!response.ok) return "/default-bg.jpg"; // Fallback image
+  if (!response.ok) return null;
   const data: WeatherCity = await response.json();
-  return data.photos.length > 0
-    ? data.photos[0].src.original
-    : "/default-bg.jpg";
+  return data.photos.length > 0 ? data.photos[0].src.original : "";
 }
